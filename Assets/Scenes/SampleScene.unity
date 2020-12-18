@@ -265,9 +265,9 @@ MonoBehaviour:
   FlowSpeed: 1.25
   Tiling: 15
   Offset: 0
-  WhiteColor: {r: 0.5229619, g: 0.9811321, b: 0.8245423, a: 1}
-  DarkenColor: {r: 0, g: 0.3034365, b: 0.745283, a: 1}
-  BlackColor: {r: 0, g: 0.8113208, b: 1, a: 1}
+  WhiteColor: {r: 0, g: 1, b: 0.6581197, a: 1}
+  DarkenColor: {r: 1, g: 1, b: 1, a: 1}
+  BlackColor: {r: 0, g: 0.068923436, b: 0.084905684, a: 1}
   WaterfallMasks: {fileID: 2800000, guid: 05e5872887f7f4f4fa40718fbac01a51, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -583,12 +583,12 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: b367486e721ed7c43bbcdf67d368ead6, type: 2}
   meshRenderer: {fileID: 1571795339}
   Shader: {fileID: 0}
-  FlowSpeed: 1.25
+  FlowSpeed: 1.33
   Tiling: 15
   Offset: 0
-  WhiteColor: {r: 0.5229619, g: 0.9811321, b: 0.8245423, a: 1}
-  DarkenColor: {r: 0, g: 0.3034365, b: 0.745283, a: 1}
-  BlackColor: {r: 0, g: 0.8113208, b: 1, a: 1}
+  WhiteColor: {r: 0, g: 0.67935586, b: 1, a: 1}
+  DarkenColor: {r: 0.06541474, g: 0.50562125, b: 0.6603774, a: 1}
+  BlackColor: {r: 0.0980392, g: 0.45496312, b: 0.67058825, a: 1}
   WaterfallMasks: {fileID: 2800000, guid: 05e5872887f7f4f4fa40718fbac01a51, type: 3}
 --- !u!1 &1839124201
 GameObject:

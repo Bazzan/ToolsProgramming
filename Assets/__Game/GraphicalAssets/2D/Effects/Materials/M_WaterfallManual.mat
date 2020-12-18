@@ -41,15 +41,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Float3: 2.54
-    - _FlowSpeed: 1.25
+    - _FlowSpeed: 1.33
     - _Offset: 0
     - _Tiling: 15
     - __dirty: 0
     m_Colors:
-    - _BlackColor: {r: 0, g: 0.8113208, b: 1, a: 1}
+    - _BlackColor: {r: 0.0980392, g: 0.45496312, b: 0.67058825, a: 1}
     - _Color: {r: 0.34901962, g: 0.89019614, b: 0.9607844, a: 1}
     - _Color0: {r: 0.007843141, g: 0.28940117, b: 0.5647059, a: 1}
-    - _DarkenColor: {r: 0, g: 0.3034365, b: 0.745283, a: 1}
+    - _DarkenColor: {r: 0.06541474, g: 0.50562125, b: 0.6603774, a: 1}
     - _SlowAreaColor: {r: 0.33333334, g: 0.7490196, b: 0.95294124, a: 1}
-    - _WhiteColor: {r: 0.5229619, g: 0.9811321, b: 0.8245423, a: 1}
+    - _WhiteColor: {r: 0, g: 0.67935586, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WS_ FirstPreset
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: f5aee2457049bf14cbb76a92188cdb71, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: material
+    value: 
+    objectReference: {fileID: 2100000, guid: b367486e721ed7c43bbcdf67d368ead6, type: 2}
+  - target: {fileID: 0}
+    propertyPath: meshRenderer
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Shader
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: FlowSpeed
+    value: 1.33
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Tiling
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Offset
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: WhiteColor.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: WhiteColor.g
+    value: 0.67935586
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: WhiteColor.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: WhiteColor.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DarkenColor.r
+    value: 0.06541474
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DarkenColor.g
+    value: 0.50562125
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DarkenColor.b
+    value: 0.6603774
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: DarkenColor.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: BlackColor.r
+    value: 0.0980392
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: BlackColor.g
+    value: 0.45496312
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: BlackColor.b
+    value: 0.67058825
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: BlackColor.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: WaterfallMasks
+    value: 
+    objectReference: {fileID: 2800000, guid: 05e5872887f7f4f4fa40718fbac01a51, type: 3}
+  m_ExcludedProperties: []

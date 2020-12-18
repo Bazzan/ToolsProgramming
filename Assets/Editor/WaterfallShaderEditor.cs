@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using UnityEditor.Presets;
 
 [CustomEditor(typeof(WaterfallShader))]
 public class WaterfallShaderEditor : Editor
@@ -7,6 +8,12 @@ public class WaterfallShaderEditor : Editor
 
 
     private WaterfallShader waterfallShader;
+
+    private WaterfallPresetReceiver waterfallPresetReceiver;
+    private string presetName;
+
+
+
     private bool isReady = false;
     private GameObject selected;
 
@@ -106,9 +113,13 @@ public class WaterfallShaderEditor : Editor
         FontStyle originalFontStyle = EditorStyles.label.fontStyle;
         EditorStyles.label.fontStyle = FontStyle.Bold;
 
-        AddSliderSettings("Adjusts the speed streaming water", flowSpeed, 0f, 10f);
-        AddSliderSettings("Adjusts the size of tiles", tiling, 0f, 15f);
-        AddSliderSettings("Offsets the texture", offset, 0f, 1f);
+        DetiledExplanationBox("Flow Speed: Adjusts the speed streaming water, \n" +
+                              "Tiling: Adjusts the size of tiles, \n" +
+                              "Offset: Offsets the texture ");
+
+        AddSliderSettings(flowSpeed, 0f, 10f);
+        AddSliderSettings(tiling, 0f, 15f);
+        AddSliderSettings(offset, 0f, 1f);
 
         ExplanationBox("Colors");
         AddColorSettings(blackColor, "Black Color");
@@ -126,28 +137,81 @@ public class WaterfallShaderEditor : Editor
     }
     private void SettingsUI()
     {
+        ExplanationBox("Preset saving and loading");
+        using (new GUILayout.HorizontalScope())
+        {
+            presetName = EditorGUILayout.TextField("Preset Name", presetName);
+            if(GUILayout.Button("Save preset"))
+            {
+                OnSavePresetClicked();
+                GUIUtility.ExitGUI();
+            }
+        }
 
-        
+
+        using (new GUILayout.HorizontalScope())
+        {
+            if (GUILayout.Button("Load Preset"))
+            {
+                OnLoadPresetClicked();
+                GUIUtility.ExitGUI();
+            }
+        }
+
     }
-    private void AddColorSettings(/*string explanation,*/ SerializedProperty property, string colorName)
+
+    public void OnSavePresetClicked()
+    {
+        presetName = presetName.Trim();
+        if (string.IsNullOrEmpty(presetName))
+        {
+            EditorUtility.DisplayDialog("Unable to save preset", " Please specify a valid preset name", "Close");
+            return;
+        }
+        else
+        {
+            CreatePresetAsset(waterfallShader, presetName);
+            EditorUtility.DisplayDialog("Preset Saved", "The preset was saved", "Close");
+            return;
+        }
+
+    }
+
+
+    private void CreatePresetAsset(Object source, string presetName)
+    {
+        Preset preset = new Preset(source);
+        AssetDatabase.CreateAsset(preset, "Assets/scripts/Presets/" + "WS_ " + presetName + ".preset");
+    }
+
+    public void OnLoadPresetClicked()
+    {
+        WaterfallPresetReceiver presetRecevier = ScriptableObject.CreateInstance<WaterfallPresetReceiver>();
+        presetRecevier.Init(waterfallShader);
+        PresetSelector.ShowSelector(waterfallShader, null, false, presetRecevier);
+
+
+    }
+
+    private void AddColorSettings(SerializedProperty property, string colorName)
     {
 
         //DetiledExplanationBox(explanation);
         using (new GUILayout.HorizontalScope())
         {
-            EditorGUILayout.PropertyField(property, new GUIContent(colorName) );
+            EditorGUILayout.PropertyField(property, new GUIContent(colorName));
         }
     }
 
 
-    private void AddSliderSettings(string explanation,SerializedProperty property ,float minFloat, float maxFloat)
+    private void AddSliderSettings(SerializedProperty property, float minFloat, float maxFloat)
     {
-        DetiledExplanationBox(explanation);
         using (new GUILayout.HorizontalScope())
         {
             EditorGUILayout.Slider(property, minFloat, maxFloat);
         }
     }
+
 
 
     private void DetiledExplanationBox(string inputText)
